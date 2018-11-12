@@ -7,21 +7,34 @@ let clickCount = 0;
 function buttonGenerator(clickCount) {
     let count = clickCount;
     // console.log('clickcount', conut);
-    $(`#div${count}`).append(`<button id="swapButton${count}">Swap</button>
-    <button id="deleteButton${count}">Delete</button>`)
+    $(`#div${count}`).append(`<button class="swapButton" id="swapButton${count}">Swap</button>
+    <button class="deleteButton" id="deleteButton${count}">Delete</button>`)
+    $(`.swapButton`).on('click', colourSwap);
+    $(`.deleteButton`).on('click', deleteDiv);
 }//end buttonGenerator function
 
+function colourSwap() {
+
+    console.log('in colourSwap' );
+
+
+}//end colourSwap function
 
 function clickHandlers() {
-    $('#generateButton').on('click', createDiv)
+    $('#generateButton').on('click', createDiv);
 }//end clickHandlers function
 
 function createDiv() {
     clickCount += 1;
     // console.log('clickCount', clickCount);
-    $('#htmlBody').append(`<div id="div${clickCount}"></div>`);
+    $('#htmlBody').append(`<div class="generated" id="div${clickCount}"></div>`);
     buttonGenerator(`${ clickCount }`);
 }//end createDiv function
+
+function deleteDiv() {
+    console.log('in deleteDiv');
+
+}//end deleteDiv function
 
 function jQReady() {
     console.log('$ up');
