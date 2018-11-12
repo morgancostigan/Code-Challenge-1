@@ -9,15 +9,12 @@ function buttonGenerator(clickCount) {
     // console.log('clickcount', conut);
     $(`#div${count}`).append(`<button class="swapButton" id="swapButton${count}">Swap</button>
     <button class="deleteButton" id="deleteButton${count}">Delete</button>`)
-    $(`.swapButton`).on('click', colourSwap);
-    $(`.deleteButton`).on('click', deleteDiv);
+    $(`.swapButton`).on('click', colourSwap);//this runs as many times as there are generated divs.  WHY?
+    $(`.deleteButton`).on('click', deleteDiv);//this runs as many times as there are generated divs.  WHY?
 }//end buttonGenerator function
 
 function colourSwap() {
-
     console.log('in colourSwap' );
-
-
 }//end colourSwap function
 
 function clickHandlers() {
@@ -33,7 +30,6 @@ function createDiv() {
 
 function deleteDiv() {
     console.log('in deleteDiv');
-
 }//end deleteDiv function
 
 function jQReady() {
